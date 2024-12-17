@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Lightning Out Demo</title>
-    <script src="https://unpkg.com/@salesforce/lightning-<EMAIL>/iife/lightning.out.js"></script>
-    <script>
-        function init(){
-            $Lightning.use("c:embeddedFlowApp",    // name of the Lightning app
-                function() {                  // Callback once framework and app loaded
-                    $Lightning.createComponent(
-                        "c:embeddedFlow", // top-level component of your app
-                        { },                  // attributes to set on the component when created
-                        "container",   // the DOM location to insert the component
-                        function(cmp) { // callback when component is created and active on the page
-                        }
-                    );
-                },
-                '	https://tatasteeleurope--bsuksp6.sandbox.my.site.com/testleadgen/'  // Experience Cloud site endpoint
+<div id='container'></div>
+<script type='text/javascript' src="https://tatasteeleurope--bsuksp6.sandbox.my.site.com/testleadgen/lightning/lightning.out.js"></script>
+<script type='text/javascript'>
+function init(){
+    $Lightning.use("c:embeddedFlowApp",    // name of the Lightning app
+        function() {                  // Callback once framework and app loaded
+            $Lightning.createComponent(
+                "c:embeddedFlow", // top-level component of your app
+                { },                  // attributes to set on the component when created
+                "container",   // the DOM location to insert the component
+                function(cmp) { // callback when component is created and active on the page
+                    console.log('lightnint component started');
+                }
             );
-        }
-    </script>
-</head>
-<body>
-    <div id="container"></div>
-    <script>
-        init();
-    </script>
-</body>
+        },
+        'https://tatasteeleurope--bsuksp6.sandbox.my.site.com/testleadgen/'  // Experience Cloud site endpoint
+    );
+    }
+</script>
 </html>
 
