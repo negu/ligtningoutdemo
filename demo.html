@@ -1,24 +1,21 @@
-<!DOCTYPE html>
 <html>
 <div id='container'></div>
 <script type='text/javascript' src="https://tatasteeleurope--bsuksp6.sandbox.my.site.com/testleadgen/lightning/lightning.out.js"></script>
- <script type='text/javascript'>
-function init(){
-    $Lightning.use("c:embeddedFlowApp",    // name of the Lightning app
-        function() {                  // Callback once framework and app loaded
+<script>
+    $Lightning.use(
+        'c:embeddedFlowApp', // name of the Lightning Out app
+        function () { // callback after the framework and app load
             $Lightning.createComponent(
-                "c:embeddedFlow", // top-level component of your app
-                { },                  // attributes to set on the component when created
-                "container",   // the DOM location to insert the component
-                function(cmp) { // callback when component is created and active on the page
-                    console.log('lightnint component started');
+                'c:embeddedFlowLWC', // top-level component of the Lightning Out app
+                {}, // attributes to set on the component
+                'container', // DOM element ID where the component is inserted
+                function (cmp) { // callback after the component loads
+                    console.log('The component was created.');
                 }
             );
         },
-        'https://tatasteeleurope--bsuksp6.sandbox.my.site.com/testleadgen'  // Experience Cloud site endpoint
+        'https://tatasteeleurope--bsuksp6.sandbox.my.site.com/testleadgen' // Experience Cloud site endpoint
     );
-    }
 </script>
-    TEST p
+    TEST
 </html>
-
